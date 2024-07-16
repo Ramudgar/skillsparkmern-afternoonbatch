@@ -1,0 +1,40 @@
+function add(a, b) {
+  return a + b;
+}
+let addResult = add(1, 2);
+console.log(addResult);
+
+const add = function (a, b) {
+  return a + b;
+};
+let sumResult = add(1, 2);
+console.log(sumResult);
+
+// subtract using arrow function
+const subtract = (a, b) => {
+  return a - b;
+};
+let subResult = subtract(1, 2);
+
+const vhecile = {
+  type: "car",
+  model: "Toyota",
+  color: "black",
+  year: 2020,
+  start: function () {
+    return "started";
+  },
+  stop: function () {
+    return "stopped";
+  },
+};
+
+
+console.log(vhecile.type);
+console.log(vhecile.year);
+console.log(vhecile.start());
+console.log(vhecile.stop());
+
+
+
+
