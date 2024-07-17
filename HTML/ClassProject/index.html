@@ -1,62 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
     <style>
+      /* h1 {
+      color:red;
+    } */
 
-/* #portfolio-title{
-            color:blue;
-            text-align:center;
-            font-size:40px;
-            font-weight: 100;
-            background-color: lightblue;
+      #portfolio {
+        background-color: lightblue;
+        color: black;
+      }
+      .portfolio_class {
+        background-color: lightgreen;
+        color: black;
+      }
+      .portfolio-title_class {
+        color: red;
+      }
+      #portfolio-title {
+        color: blue;
+      }
 
-        }
-        #portfolio{
-            background-color: lightblue;
-            
-        } */
+      .title {
+        color: red;
+      }
 
-        .portfolio-title_class{
-            color:blue;
-            text-align:center;
-            font-size:40px;
-            font-weight: 100;
-            background-color: lightblue;
+      #text-1 {
+        background-color: rgb(206, 151, 49);
+        font-size: 30px;
+      }
 
-        }
-
-        .portfolio_class{
-            background-color: lightblue;   
-        }
-
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            background-color: lightgoldenrodyellow;
-        }
-        
-
+      #text-2 {
+        background-color: rgb(7, 113, 48);
+        font-weight: bold;
+      }
     </style>
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-    <div id="portfolio" class="portfolio_class">
-        <h1 id="portfolio-title " class="portfolio-title_class" >Portfolio</h1>
-        <h2 style="color:blue; font-family: 'Times New Roman', Times, serif;">Personal Information</h2>
-        <p>Name: John Doe</p>
-        <p>Age: 25</p>
-    </div>
-    <div  class="portfolio_class">
-        <h1  class="portfolio-title_class" >Portfolio</h1>
-        <h2 style="color:blue; font-family: 'Times New Roman', Times, serif;">Personal Information</h2>
-        <p>Name: John Doe</p>
-        <p>Age: 25</p>
-    </div>
-    
 
-</body>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="portfolio" class="portfolio_class">
+      <h1 id="portfolio-title " class="portfolio-title_class">Portfolio</h1>
+      <h2 style="font-family: 'Times New Roman', Times, serif">
+        Personal Information
+      </h2>
+      <p>Name: John Doe</p>
+      <p>Age: 25</p>
+    </div>
+    <div class="portfolio_class 2">
+      <h1 class="portfolio-title_class">Portfolio2</h1>
+      <h2 style="color: blue; font-family: 'Times New Roman', Times, serif">
+        Personal Information 2
+      </h2>
+      <p>Name: John Doe</p>
+      <p>Age: 25</p>
+    </div>
+
+    <div>
+      <h1 id="text-1" class="title">Title</h1>
+      <p id="text-2" class="title">id: portfolio</p>
+    </div>
+  </body>
 </html>
