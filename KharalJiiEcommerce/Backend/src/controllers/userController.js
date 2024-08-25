@@ -3,17 +3,19 @@
 const User = require("../models/userModel");
 
 const userRegister = async (req, res) => {
-  const data = req.body;
-  // const name=req.body.name;
-
-  if (!data.email || !data.password) {
-    res.status(400).json({ msg: "Please enter email or password" });
-  }
-
   try {
+    // console.log(req.body);
+    const data = req.body;
+    console.log(data);
+    console.log(data.name);
+    // const name=req.body.name;
+
+    if (!data.email || !data.password) {
+      return res.status(400).json({ msg: "Please enter email or password" });
+    }
     const user = await User.findOne({ email: data.email });
     if (user) {
-      res.status(400).json({ msg: "User already exists" });
+      return res.status(400).json({ msg: "User already exists" });
     }
     const newUser = new User({
       name: data.name,
@@ -28,7 +30,7 @@ const userRegister = async (req, res) => {
       .json({ msg: "User registered successfully", user: response });
   } catch (err) {
     console.log(err);
-    res.status(500).json({ msg: "Server error", error: err });
+    return res.status(500).json({ msg: "Server error", error: err });
   }
 };
 
