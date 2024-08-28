@@ -6,6 +6,7 @@ const userRegister = async (req, res) => {
   try {
     // console.log(req.body);
     const data = req.body;
+    const email = data.email;
     console.log(data);
     console.log(data.name);
     // const name=req.body.name;
@@ -13,7 +14,7 @@ const userRegister = async (req, res) => {
     if (!data.email || !data.password) {
       return res.status(400).json({ msg: "Please enter email or password" });
     }
-    const user = await User.findOne({ email: data.email });
+    const user = await User.findOne({ email: email });
     if (user) {
       return res.status(400).json({ msg: "User already exists" });
     }
