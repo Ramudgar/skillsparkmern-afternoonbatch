@@ -30,10 +30,6 @@ const userRegister = async (req, res) => {
       userRole: data.userRole,
     });
 
-    const profile = await Profile.findOne({ user: newUser._id });
-    if (profile) {
-      return res.status(400).json({ msg: "Profile already exists" });
-    }
     const newProfile = new Profile({
       user: newUser._id,
     });
