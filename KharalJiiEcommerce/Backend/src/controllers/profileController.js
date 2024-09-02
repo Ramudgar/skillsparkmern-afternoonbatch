@@ -9,16 +9,19 @@ const updateProfile = async (req, res) => {
       return res.status(404).json({ msg: "profile not found" });
     }
     const { firstName, phone, address } = req.body;
-    const updatedProfile = await Profile.updateOne({
+    const updatedProfile = await Profile.updateOne({user:userId},{
       firstName: firstName ? firstName : profile.firstName,
       phone: phone ? phone : profile.phone,
       address: address ? address : profile.address,
     });
-    res
+
+    return res
       .status(200)
-      .json({ msg: "profile updated successfully", updatedProfile });
+      .json({ msg: "profile updated successfully", profile });
   } catch (err) {
     // console.log(err);
-    res.status(500).json({ msg: "server error", error: err.message });
+    return res.status(500).json({ msg: "server error", error: err.message });
   }
 };
+
+module.exports = { updateProfile };
