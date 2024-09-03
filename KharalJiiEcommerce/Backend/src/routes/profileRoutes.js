@@ -1,5 +1,5 @@
 const express = require("express");
-const { updateProfile } = require("../controllers/profileController");
+const { updateProfile, getProfile } = require("../controllers/profileController");
 const authMiddleware = require("../middlewares/authMiddleware");
 const router = express.Router();
 
@@ -11,5 +11,15 @@ const router = express.Router();
  * @return response
  */
 router.put("/update", authMiddleware, updateProfile);
+
+/**
+ * @description To  user get profile
+ * @api /api/profile/get
+ * @access private
+ * @type get
+ * @return response
+ */
+
+router.get("/get", authMiddleware, getProfile);
 
 module.exports = router;
