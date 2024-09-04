@@ -1,5 +1,5 @@
 const express = require("express");
-const { updateProfile, getProfile } = require("../controllers/profileController");
+const { updateProfile, getProfile, deleteProfile } = require("../controllers/profileController");
 const authMiddleware = require("../middlewares/authMiddleware");
 const router = express.Router();
 
@@ -21,5 +21,16 @@ router.put("/update", authMiddleware, updateProfile);
  */
 
 router.get("/get", authMiddleware, getProfile);
+
+
+/**
+ * @description To delete user profile
+ * @api /api/profile/delete
+ * @access private
+ * @type delete
+ * @return response
+ */
+
+router.delete("/delete", authMiddleware, deleteProfile);
 
 module.exports = router;
