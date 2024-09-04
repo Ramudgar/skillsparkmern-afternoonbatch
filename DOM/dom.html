@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+    <style>
+      #btn:hover{
+        background-color: rgb(48, 105, 186)!important;
+        color: white;
+        box-shadow: 2px 2px 5px rgb(227, 54, 54, 0.25);
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="title">Document Object Model</h1>
+
+    <p class="content">
+      The Document Object Model (DOM) is a programming interface for web
+      documents. It represents the page so that programs can change the document
+      structure, style, and content. The DOM represents the document as nodes
+      and objects. That way, programming languages can connect to the page.
+    </p>
+
+    <h1 class="chat">Hello, Shyam are you doing well?</h1>
+
+    <!-- accessing attribute -->
+
+    <input type="text" id="myInput" value="helo,gpt?" />
+    <div id="placeElem"></div>
+
+    <br /><br />
+
+   
+    <div id="date-display">
+
+    </div>
+    <div>
+      <button onmouseover="displayDate()" onmouseout="removeDate()" id="btn" style="background-color: rgb(4, 4, 74) ; padding: 10px; color:white;border-radius: 5px;font-size: 1.2em;box-shadow:2px 2px rgb(227, 54, 54,0.25);">Display Date</button>
+    </div>
+
+    <button id="clickme">Clickme</button>
+
+   
+
+    <script>
+      // const btn=document.querySelector('#btn');
+
+      function displayDate(){
+        document.getElementById('date-display').innerHTML=Date();
+      }
+    function removeDate (){
+      document.getElementById('date-display').innerHTML='';
+    }
+
+      function alertMessage(){
+        alert('Hello, Shyam');
+      }
+
+      const clickme=document.querySelector('#clickme');
+      clickme.addEventListener('click',()=>{
+        alert('Hello, Shyam');
+      });
+    </script>
+    <script src="./dom.js"></script>
+  </body>
+</html>

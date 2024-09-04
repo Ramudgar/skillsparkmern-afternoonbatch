@@ -554,6 +554,10 @@ video {
   --tw-contain-style:  ;
 }
 
+.invisible {
+  visibility: hidden;
+}
+
 .absolute {
   position: absolute;
 }
@@ -568,6 +572,10 @@ video {
 
 .top-\[50\%\] {
   top: 50%;
+}
+
+.block {
+  display: block;
 }
 
 .flex {

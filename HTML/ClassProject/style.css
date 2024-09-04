@@ -1,3 +1,93 @@
-p{
-    color:orange;
+/* *{
+    background-color: rgb(246, 202, 171);
+    font-family: 'Courier New', Courier, monospace;
+     roboto,poppins, 
+} */
+
+
+#group-selector,#lorem1,#lorem2{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    color:blue;
 }
+
+
+.box1,.box2,.box3{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    color:blue;
+}
+
+.box1{
+    height: 100px;
+    background-color: rgb(246, 202, 171);
+
+}
+
+.box2,.box3{
+    height: 200px;
+    background-color: rgb(52, 24, 4);
+}
+
+#facebook:link{
+    color: blue;
+}
+#facebook:visited{
+    color: rgb(255, 132, 0);
+}
+
+#facebook:hover{
+    color: rgb(255, 0, 0);
+}
+
+#facebook:active{
+    color: rgb(0, 0, 255);
+}
+
+#submit{
+    background-color: rgb(15, 70, 220);
+    color: white;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    border:0;
+    border-radius: 5px;
+}
+
+ #submit:hover{
+    background-color: red;
+    color: white;
+    cursor: pointer;
+ }
+
+ #skill:first-letter{
+     color: red;
+        font-size: 30px;
+    }
+
+    input[type="text"]{
+        font-size: 20px;
+        font-family: 'Courier New', Courier, monospace;
+        color: brown;
+    }
+
+/* descendent selector */
+    /* .main-div h1{
+        font-size: 30px;
+        font-family: 'Courier New', Courier, monospace;
+        color: blue;
+    }
+/* descendent selector */
+    .child-div h1{
+        font-size: 20px;
+        font-family: 'Courier New', Courier, monospace;
+        color: rgb(226, 33, 33);
+    } 
+/* chile selector */ 
+    .main-div > h1 {
+        font-size: 30px;
+        font-family: 'Courier New', Courier, monospace;
+        color: rgb(218, 139, 20);
+    }
+    h1{
+        color:pink !important;
+    }

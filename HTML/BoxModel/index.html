@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Box model</title>
+    <style>
+        .container{
+            height: 200px;
+            width: auto;
+            background-color: rgb(219, 191, 34);
+            margin: 10px 10px;
+            text-align: center;
+            line-height: 200px;
+        }
+
+        button{
+            padding: 10px;
+            border: none;    
+            /* border-left:1px solid black; */
+            border-radius: 10px;
+            margin:0px 10px;
+            
+        }
+
+        button:hover{
+            background-color: rgb(25, 109, 211);
+            color: white;
+            cursor:pointer;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>Box model</h1>
+    <div class="container">
+      <button id="btn1">Button1</button>
+      <button id="btn2">Button2</button>
+      <button id="btn3">Button3</button>
+    </div>
+    <div class="container">
+      <button id="btn4">Button4</button>
+      <button id="btn5">Button5</button>
+      <button id="btn6">Button6</button>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,94 @@
+body {
+  font-family: "Gilroy";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  margin: 0;
+}
+
+nav h1 {
+  font-size: 2em;
+  margin: 0;
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+  width: 30%;
+  justify-content: center;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+nav ul li a:hover {
+  color: #f1c40f;
+}
+
+nav button {
+  background-color: #f1c40f;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+}
+
+nav button:hover {
+  background-color: #f39c12;
+  cursor: pointer;
+}
+
+nav #menu-toggle {
+  display: none;
+}
+
+nav #menu-icon {
+  display: none;
+  font-size: 1.75em;
+}
+
+@media screen and (max-width: 768px) {
+  nav ul, nav button {
+    display: none;
+  }
+
+  nav #menu-icon {
+    display: block;
+    cursor: pointer;
+  }
+
+  nav #menu-toggle:checked ~ ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  nav {
+    padding: 10px 5px;
+  }
+}
