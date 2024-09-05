@@ -1,6 +1,7 @@
 const express = require("express");
 const { updateProfile, getProfile, deleteProfile } = require("../controllers/profileController");
 const authMiddleware = require("../middlewares/authMiddleware");
+const { profileImage } = require("../middlewares/uploadMiddleware");
 const router = express.Router();
 
 /**
@@ -10,7 +11,7 @@ const router = express.Router();
  * @type put
  * @return response
  */
-router.put("/update", authMiddleware, updateProfile);
+router.put("/update", authMiddleware,profileImage.single('profilePic'), updateProfile);
 
 /**
  * @description To  user get profile

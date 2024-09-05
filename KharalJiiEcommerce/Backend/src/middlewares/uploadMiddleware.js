@@ -2,19 +2,17 @@ const multer = require("multer");
 const { diskStorage } = require("multer");
 // const diskStorage = multer.diskStorage;
 const path = require("path");
-
 // Regular expression to eliminate whitespace and special characters from file names
 const re = new RegExp("\\s+", "g");
 const sanitizeFileName = (imageName) => {
   return imageName.replace(re, "-").replace(/[^a-zA-Z0-9_\-\.]/g, "");
 };
-
 // Function to handle file naming
 const filename = (req, file, next) => {
   let lastDotIndex = file.originalname.lastIndexOf(".");
-  let originalname = file.originalname.substring(0, lastDotIndex);
+  let originalnames = file.originalname.substring(0, lastDotIndex);
   let ext = file.originalname.substring(lastDotIndex);
-  next(null, `${sanitizeFileName(originalname)}-${Date.now()}${ext}`);
+  next(null, `${sanitizeFileName(originalnames)}-${Date.now()}${ext}`);
 };
 
 // Function to filter file types

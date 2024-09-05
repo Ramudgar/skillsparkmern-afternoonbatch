@@ -6,6 +6,8 @@ const port = process.env.PORT || 3000;
 const connectDB = require("./src/config/db");
 
 app.use(express.json());
+// Serve static files from the 'uploads' directory
+app.use("/uploads", express.static(__dirname + "/uploads"));
 
 connectDB();
 
