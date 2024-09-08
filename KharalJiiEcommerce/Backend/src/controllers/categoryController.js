@@ -5,6 +5,9 @@ const CategoryModel = require("../models/categoryModel");
 const createCategory = async (req, res) => {
   try {
     const { name } = req.body;
+    if (!name) {
+      return res.status(400).json({ message: "Name is required" });
+    }
     const category = await CategoryModel.findOne({ name });
     if (category) {
       return res.status(400).json({ message: "Category already exists" });

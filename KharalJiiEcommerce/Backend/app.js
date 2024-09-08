@@ -15,6 +15,7 @@ const userRoutes = require("./src/routes/userRoutes");
 app.use("/api/user", userRoutes);
 app.use("/api/profile", require("./src/routes/profileRoutes"));
 app.use("/api/category", require("./src/routes/categoryRoutes"));
+app.use("/api/products", require("./src/routes/productRoutes"));
 
 
 
