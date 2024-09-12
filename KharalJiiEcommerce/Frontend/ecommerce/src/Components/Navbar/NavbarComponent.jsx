@@ -1,55 +1,55 @@
-
+import { Link } from 'react-router-dom';
 function NavbarComponent() {
   return (
     <nav className="bg-white shadow-lg">
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center">
           <div className="flex space-x-7">
             <div>
-              <a href="/" className="flex items-center py-4 px-2">
+              <Link to="/" className="flex items-center py-4 px-2">
                 <span className="font-bold text-gray-600 text-xl">HealMe</span>
-              </a>
+              </Link>
             </div>
             <div className="hidden md:flex items-center space-x-1">
-              <a
-                href="/"
+              <Link
+                to="/"
                 className="py-4 px-2 text-green-500 border-b-4 border-green-500 font-semibold"
               >
                 Home
-              </a>
+              </Link>
 
-              <a
-                href="/shop"
+              <Link
+                to="/shop"
                 className="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
               >
                 Shop
-              </a>
-              <a
-                href="/product"
+              </Link>
+              <Link
+                to="/product"
                 className="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
               >
                 Product
-              </a>
+              </Link>
 
-              <a
-                href="/category"
+              <Link
+                to="/category"
                 className="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
               >
                 Category
-              </a>
-              <a
-                href="/addproduct"
+              </Link>
+              <Link
+                to="/addproduct"
                 className="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
               >
                 Add Product
-              </a>
+              </Link>
             </div>
           </div>
           <div>
             <form>
               <input
                 type="text"
-                className="py-2 px-4 rounded-md focus:outline-none border-2 border-green-200  mx-2 focus:ring focus:ring-green-500"
+                className="py-2 px-4 rounded-md focus:outline-none border-2 border-green-200 mx-2 focus:ring focus:ring-green-500"
                 placeholder="Search"
               />
               <button
@@ -65,18 +65,18 @@ function NavbarComponent() {
               Log Out
             </button>
 
-            <a
-              href="/login"
+            <Link
+              to="/login"
               className="py-2 px-2 font-medium text-gray-500 rounded hover:bg-gray-200 transition duration-300"
             >
               Log In
-            </a>
-            <a
-              href="/signup"
+            </Link>
+            <Link
+              to="/signup"
               className="py-2 px-2 font-medium text-white bg-green-500 rounded hover:bg-green-400 transition duration-300"
             >
               Sign Up
-            </a>
+            </Link>
           </div>
           <div className="md:hidden flex items-center">
             <button className="outline-none mobile-menu-button">
@@ -99,48 +99,48 @@ function NavbarComponent() {
       <div className="md:hidden">
         <ul>
           <li>
-            <a
-              href="/"
+            <Link
+              to="/"
               className="block text-sm px-2 py-4 text-white bg-green-500 font-semibold"
             >
               Home
-            </a>
+            </Link>
           </li>
 
           <>
             <li>
-              <a
-                href="/shop"
+              <Link
+                to="/shop"
                 className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
               >
                 Shop
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="/product"
+              <Link
+                to="/product"
                 className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
               >
                 Product
-              </a>
+              </Link>
             </li>
           </>
 
           <li>
-            <a
-              href="/category"
+            <Link
+              to="/category"
               className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
             >
               Category
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="/addproduct"
+            <Link
+              to="/addproduct"
               className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
             >
               Add Product
-            </a>
+            </Link>
           </li>
 
           <li>
@@ -150,20 +150,20 @@ function NavbarComponent() {
           </li>
 
           <li>
-            <a
-              href="/login"
+            <Link
+              to="/login"
               className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
             >
               Log In
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="/signup"
+            <Link
+              to="/signup"
               className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
             >
               Sign Up
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
