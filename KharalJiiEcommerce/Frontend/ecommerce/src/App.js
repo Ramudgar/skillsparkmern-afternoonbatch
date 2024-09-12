@@ -1,12 +1,16 @@
 import React from "react";
 import "./App.css";
-
+import NavbarComponent from "./Components/Navbar/NavbarComponent";
+// import Counter from "./CounterComponent";
+// import CounterFunc from "./Components/Counter/CounterComponent";
 function App() {
   return (
     <>
-      <div>Hello World</div>
+    <NavbarComponent />
+      {/* <Counter />
+      <CounterFunc /> */}
     </>
-  );
+  );  
 }
 
 export default App;

@@ -1,0 +1,31 @@
+#counter-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    font-size: 2rem;
+}
+
+#inc, #dec{
+    cursor: pointer;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    box-shadow: inset 0 0 10px 0 rgba(0,0,0,0.2);
+}
+
+#inc:hover, #dec:hover{
+    background-color: rgba(0,0,0,0.1);
+}
+
+#inc{
+    background-color: green;
+    color: white;
+}
+
+#dec{
+    background-color: red;
+    color: white;
+}

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 class Counter extends Component {
-    constructor(props) {
+  constructor(props) {
     super(props);
     this.state = {
       count: 0,
@@ -24,8 +24,8 @@ class Counter extends Component {
   }
   render() {
     return (
-      <div>
-        <h1>Count: {this.state.count}</h1>
+      <div className="flex justify-center h-40 bg-blue-500">
+        <h1>Count:{this.state.count} </h1>
         <button onClick={this.increment}>Increment</button>
         <button onClick={this.decrement}>Decrement</button>
       </div>
