@@ -25,20 +25,20 @@ function NavbarComponent() {
                 Shop
               </Link>
               <Link
-                to="/product"
+                to="/#"
                 className="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
               >
                 Product
               </Link>
 
               <Link
-                to="/category"
+                to="/#"
                 className="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
               >
                 Category
               </Link>
               <Link
-                to="/addproduct"
+                to="/#"
                 className="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
               >
                 Add Product
@@ -66,13 +66,13 @@ function NavbarComponent() {
             </button>
 
             <Link
-              to="/login"
+              to="/#"
               className="py-2 px-2 font-medium text-gray-500 rounded hover:bg-gray-200 transition duration-300"
             >
               Log In
             </Link>
             <Link
-              to="/signup"
+              to="/#"
               className="py-2 px-2 font-medium text-white bg-green-500 rounded hover:bg-green-400 transition duration-300"
             >
               Sign Up
@@ -110,7 +110,7 @@ function NavbarComponent() {
           <>
             <li>
               <Link
-                to="/shop"
+                to="/#"
                 className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
               >
                 Shop

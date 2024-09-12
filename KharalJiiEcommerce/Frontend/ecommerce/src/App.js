@@ -1,7 +1,9 @@
 import React from "react";
 import "./App.css";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router,Routes,Route } from "react-router-dom";
 import NavbarComponent from "./Components/Navbar/NavbarComponent";
+import HomeComponent from "./Components/Home/HomeComponent";
+import ShopComponent from "./Components/Shop/ShopComponent";
 // import Counter from "./CounterComponent";
 // import CounterFunc from "./Components/Counter/CounterComponent";
 function App() {
@@ -9,6 +11,10 @@ function App() {
     <>
       <Router>
         <NavbarComponent />
+        <Routes>
+          <Route path="/" element={<HomeComponent/> }/> 
+          <Route path="/shop" element={<ShopComponent/>} /> 
+        </Routes>
       </Router>
       {/* <Counter />
       <CounterFunc /> */}
