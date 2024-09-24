@@ -25,7 +25,7 @@ function NavbarComponent() {
                 Shop
               </Link>
               <Link
-                to="/#"
+                to="/product"
                 className="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
               >
                 Product
