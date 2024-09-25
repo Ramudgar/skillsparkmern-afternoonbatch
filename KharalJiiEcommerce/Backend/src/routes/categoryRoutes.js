@@ -1,5 +1,10 @@
 const express = require("express");
-const { createCategory } = require("../controllers/categoryController");
+const {
+  createCategory,
+  getCategories,
+  updateCategory,
+  deleteCategory,
+} = require("../controllers/categoryController");
 const authMiddleware = require("../middlewares/authMiddleware");
 const { authorizeRole } = require("../middlewares/authorizationMiddleware");
 const router = express.Router();
@@ -11,6 +16,23 @@ const router = express.Router();
  * type: POST
  * return:response message
  */
-router.post("/",authMiddleware,authorizeRole('admin'), createCategory);
+router.post(
+  "/",
+  // authMiddleware,authorizeRole('admin'),
+  createCategory
+);
+
+// routes to get all categories
+router.get("/", getCategories);
+
+// routes to update a category
+router.put("/:id", authMiddleware, authorizeRole("admin"), updateCategory);
+
+// routes to delete a category
+router.delete(
+  "/:id",
+  //  authMiddleware, authorizeRole("admin"),
+  deleteCategory
+);
 
 module.exports = router;
