@@ -38,7 +38,7 @@ function NavbarComponent() {
                 Category
               </Link>
               <Link
-                to="/#"
+                to="/addproduct"
                 className="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
               >
                 Add Product
@@ -66,7 +66,7 @@ function NavbarComponent() {
             </button>
 
             <Link
-              to="/#"
+              to="/login"
               className="py-2 px-2 font-medium text-gray-500 rounded hover:bg-gray-200 transition duration-300"
             >
               Log In
@@ -159,7 +159,7 @@ function NavbarComponent() {
           </li>
           <li>
             <Link
-              to="/signup"
+              to="/register"
               className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
             >
               Sign Up
