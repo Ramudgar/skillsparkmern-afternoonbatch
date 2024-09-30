@@ -18,7 +18,7 @@ const { productImage } = require("../middlewares/uploadMiddleware");
  */
 
 router.post("/create", authMiddleware,
-  //  authorizeRole("admin"),
+   authorizeRole("admin"),
    productImage.single('productImage'), createProduct);
 
 /**
