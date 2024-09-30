@@ -1,5 +1,10 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 function NavbarComponent() {
+  const token = localStorage.getItem("token");
+  const userRole = localStorage.getItem("userRole");
+  // console.log(token);
+  // console.log(userRole);
+
   return (
     <nav className="bg-white shadow-lg">
       <div className="max-w-7xl mx-auto px-4">
@@ -13,36 +18,72 @@ function NavbarComponent() {
             <div className="hidden md:flex items-center space-x-1">
               <Link
                 to="/"
-                className="py-4 px-2 text-green-500 border-b-4 border-green-500 font-semibold"
+                className="py-4 px-2  text-gray-500 font-semibold hover:text-green-500 transition duration-300  "
               >
                 Home
               </Link>
 
-              <Link
-                to="/shop"
-                className="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
-              >
-                Shop
-              </Link>
-              <Link
-                to="/product"
-                className="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
-              >
-                Product
-              </Link>
+              {token ? (
+                <>
+                  <Link
+                    to="/profile"
+                    className="py-4 px-2  text-gray-500 font-semibold hover:text-green-500 transition duration-300 "
+                  >
+                    Profile
+                  </Link>
 
-              <Link
-                to="/#"
-                className="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
-              >
-                Category
-              </Link>
-              <Link
-                to="/addproduct"
-                className="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
-              >
-                Add Product
-              </Link>
+                  <Link
+                    to="/shop"
+                    className="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
+                  >
+                    Shop
+                  </Link>
+                  <Link
+                    to="/product"
+                    className="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
+                  >
+                    Product
+                  </Link>
+
+                  {userRole === "admin" ? (
+                    <>
+                      <Link
+                        to="/category"
+                        className="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
+                      >
+                        Category
+                      </Link>
+                      <Link
+                        to="/addproduct"
+                        className="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
+                      >
+                        Add Product
+                      </Link>
+                    </>
+                  ) : null}
+
+                  <button className="py-2 px-2 font-medium text-gray-500 rounded hover:bg-gray-200 transition duration-300">
+                    Log Out
+                  </button>
+                </>
+              ) : (
+                <>
+                  <div className="hidden md:flex items-center space-x-3">
+                    <Link
+                      to="/login"
+                      className="py-2 px-2 font-medium text-gray-500 rounded hover:bg-gray-200 transition duration-300"
+                    >
+                      Log In
+                    </Link>
+                    <Link
+                      to="/register"
+                      className="py-2 px-2 font-medium text-white bg-green-500 rounded hover:bg-green-400 transition duration-300"
+                    >
+                      Sign Up
+                    </Link>
+                  </div>
+                </>
+              )}
             </div>
           </div>
           <div>
@@ -60,24 +101,7 @@ function NavbarComponent() {
               </button>
             </form>
           </div>
-          <div className="hidden md:flex items-center space-x-3">
-            <button className="py-2 px-2 font-medium text-gray-500 rounded hover:bg-gray-200 transition duration-300">
-              Log Out
-            </button>
 
-            <Link
-              to="/login"
-              className="py-2 px-2 font-medium text-gray-500 rounded hover:bg-gray-200 transition duration-300"
-            >
-              Log In
-            </Link>
-            <Link
-              to="/register"
-              className="py-2 px-2 font-medium text-white bg-green-500 rounded hover:bg-green-400 transition duration-300"
-            >
-              Sign Up
-            </Link>
-          </div>
           <div className="md:hidden flex items-center">
             <button className="outline-none mobile-menu-button">
               <svg
@@ -114,6 +138,14 @@ function NavbarComponent() {
                 className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
               >
                 Shop
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/profile"
+                className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
+              >
+                Profile
               </Link>
             </li>
             <li>
