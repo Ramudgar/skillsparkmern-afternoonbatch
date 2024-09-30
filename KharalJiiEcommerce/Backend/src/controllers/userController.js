@@ -24,7 +24,7 @@ const userRegister = async (req, res) => {
       return res.status(400).json({ msg: "User already exists" });
     }
     const newUser = new User({
-      name: data.userName,
+      name: data.name,
       email: data.email,
       password: data.password,
       userRole: data.userRole,

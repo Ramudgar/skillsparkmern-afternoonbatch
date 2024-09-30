@@ -23,7 +23,7 @@ router.post(
 );
 
 // routes to get all categories
-router.get("/", getCategories);
+router.get("/",authMiddleware, getCategories);
 
 // routes to update a category
 router.put("/:id", authMiddleware, authorizeRole("admin"), updateCategory);

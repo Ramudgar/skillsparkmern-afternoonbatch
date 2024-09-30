@@ -17,7 +17,9 @@ const { productImage } = require("../middlewares/uploadMiddleware");
  * return: response message and the created product
  */
 
-router.post("/create", authMiddleware, authorizeRole("admin"),productImage.single('productImage'), createProduct);
+router.post("/create", authMiddleware,
+  //  authorizeRole("admin"),
+   productImage.single('productImage'), createProduct);
 
 /**
  * description: to get all products
