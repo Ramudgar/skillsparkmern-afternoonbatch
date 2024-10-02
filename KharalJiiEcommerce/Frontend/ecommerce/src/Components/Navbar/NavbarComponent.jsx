@@ -1,9 +1,26 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../features/auth/authSlice";
+import { toggle } from "../../features/navbar/navbarSlice";
+
 function NavbarComponent() {
-  const token = localStorage.getItem("token");
-  const userRole = localStorage.getItem("userRole");
-  // console.log(token);
-  // console.log(userRole);
+ 
+  const navigate=useNavigate();
+
+  const dispatch = useDispatch();
+  const authState = useSelector((state) => state.auth);
+  console.log(authState.isAuthenticated);
+  const isOpen = useSelector((state) => state.navbar.isOpen);
+
+  const handleLogout = () => {
+    dispatch(logout());
+    navigate("/login");
+    
+  }
+
+  console.log(localStorage.getItem("token"));
+  
 
   return (
     <nav className="bg-white shadow-lg">
@@ -23,7 +40,7 @@ function NavbarComponent() {
                 Home
               </Link>
 
-              {token ? (
+              {authState.isAuthenticated ? (
                 <>
                   <Link
                     to="/profile"
@@ -45,7 +62,7 @@ function NavbarComponent() {
                     Product
                   </Link>
 
-                  {userRole === "admin" ? (
+                  {authState.userRole === "admin" ? (
                     <>
                       <Link
                         to="/category"
@@ -62,7 +79,10 @@ function NavbarComponent() {
                     </>
                   ) : null}
 
-                  <button className="py-2 px-2 font-medium text-gray-500 rounded hover:bg-gray-200 transition duration-300">
+                  <button
+                  onClick={handleLogout()}
+                  
+                  className="py-2 px-2 font-medium text-gray-500 rounded hover:bg-gray-200 transition duration-300">
                     Log Out
                   </button>
                 </>

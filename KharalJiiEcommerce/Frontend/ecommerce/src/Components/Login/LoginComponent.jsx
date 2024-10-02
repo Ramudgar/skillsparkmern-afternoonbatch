@@ -7,11 +7,16 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 
+import { useDispatch } from "react-redux";
+import { login } from "../../features/auth/authSlice";
+
 const LoginComponent = () => {
   const [loginData, setLoginData] = useState({
     email: "",
     password: "",
   });
+
+  const dispatch = useDispatch();
 
   const [errors, setErrors] = useState({});
   const [showPassword, setShowPassword] = useState(false);
@@ -47,12 +52,17 @@ const LoginComponent = () => {
         // console.log(response.data);
         // set token in local storage
         const { token, user } = response.data;
+       
         localStorage.setItem("token", token);
         localStorage.setItem("userRole", user.userRole);
+
         // console.log(response.data.token);
 
-        setTimeout(()=>{
-            Navigate("/product");
+        // dispatch login action
+        dispatch(login({ token, userRole: user.userRole }));
+
+        setTimeout(() => {
+          Navigate("/product");
         }, 1000);
 
         // show success message
