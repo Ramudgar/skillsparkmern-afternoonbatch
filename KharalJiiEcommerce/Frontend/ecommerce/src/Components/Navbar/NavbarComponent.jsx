@@ -5,8 +5,7 @@ import { logout } from "../../features/auth/authSlice";
 import { toggle } from "../../features/navbar/navbarSlice";
 
 function NavbarComponent() {
- 
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
   const dispatch = useDispatch();
   const authState = useSelector((state) => state.auth);
@@ -16,11 +15,9 @@ function NavbarComponent() {
   const handleLogout = () => {
     dispatch(logout());
     navigate("/login");
-    
-  }
+  };
 
-  console.log(localStorage.getItem("token"));
-  
+  console.log(isOpen);
 
   return (
     <nav className="bg-white shadow-lg">
@@ -80,9 +77,9 @@ function NavbarComponent() {
                   ) : null}
 
                   <button
-                  onClick={handleLogout()}
-                  
-                  className="py-2 px-2 font-medium text-gray-500 rounded hover:bg-gray-200 transition duration-300">
+                    onClick={handleLogout}
+                    className="py-2 px-2 font-medium text-gray-500 rounded hover:bg-gray-200 transition duration-300"
+                  >
                     Log Out
                   </button>
                 </>
@@ -123,7 +120,9 @@ function NavbarComponent() {
           </div>
 
           <div className="md:hidden flex items-center">
-            <button className="outline-none mobile-menu-button">
+            <button
+            onClick={() => dispatch(toggle())}
+            className="outline-none mobile-menu-button ">
               <svg
                 className="w-6 h-6 text-gray-500 hover:text-green-500"
                 fill="none"
@@ -140,85 +139,89 @@ function NavbarComponent() {
         </div>
       </div>
 
-      <div className="md:hidden">
-        <ul>
-          <li>
-            <Link
-              to="/"
-              className="block text-sm px-2 py-4 text-white bg-green-500 font-semibold"
-            >
-              Home
-            </Link>
-          </li>
+      {isOpen && (
+        <>
+          <div className="md:hidden">
+            <ul>
+              <li>
+                <Link
+                  to="/"
+                  className="block text-sm px-2 py-4 text-white bg-green-500 font-semibold"
+                >
+                  Home
+                </Link>
+              </li>
 
-          <>
-            <li>
-              <Link
-                to="/#"
-                className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
-              >
-                Shop
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/profile"
-                className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
-              >
-                Profile
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/product"
-                className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
-              >
-                Product
-              </Link>
-            </li>
-          </>
+              <>
+                <li>
+                  <Link
+                    to="/#"
+                    className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
+                  >
+                    Shop
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/profile"
+                    className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
+                  >
+                    Profile
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/product"
+                    className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
+                  >
+                    Product
+                  </Link>
+                </li>
+              </>
 
-          <li>
-            <Link
-              to="/category"
-              className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
-            >
-              Category
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/addproduct"
-              className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
-            >
-              Add Product
-            </Link>
-          </li>
+              <li>
+                <Link
+                  to="/category"
+                  className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
+                >
+                  Category
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/addproduct"
+                  className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
+                >
+                  Add Product
+                </Link>
+              </li>
 
-          <li>
-            <button className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">
-              Log Out
-            </button>
-          </li>
+              <li>
+                <button className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">
+                  Log Out
+                </button>
+              </li>
 
-          <li>
-            <Link
-              to="/login"
-              className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
-            >
-              Log In
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/register"
-              className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
-            >
-              Sign Up
-            </Link>
-          </li>
-        </ul>
-      </div>
+              <li>
+                <Link
+                  to="/login"
+                  className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
+                >
+                  Log In
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/register"
+                  className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
+                >
+                  Sign Up
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </>
+      )}
     </nav>
   );
 }

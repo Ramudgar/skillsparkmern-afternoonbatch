@@ -48,15 +48,18 @@ const LoginComponent = () => {
           "http://localhost:8000/api/user/login",
           loginData
         );
-        console.log(response);
+        // console.log(response);
         // console.log(response.data);
         // set token in local storage
         const { token, user } = response.data;
-       
+
         localStorage.setItem("token", token);
         localStorage.setItem("userRole", user.userRole);
 
         // console.log(response.data.token);
+
+        // Debugging localStorage after setting the token
+        // console.log("Token after setting:", localStorage.getItem("token"));
 
         // dispatch login action
         dispatch(login({ token, userRole: user.userRole }));
