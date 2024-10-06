@@ -51,21 +51,25 @@ const AddProductComponent = () => {
     console.log("FormData:", formData);
 
     try {
-      const response = await axiosInstance.post("/products/create", data);
+      const response = await axiosInstance.post("/products/create", data, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
       toast.success(response.data.message);
       console.log("Product added successfully:", response.data);
-    //   make form data empty
-        setFormData({
-            category: "",
-            name: "",
-            price: "",
-            description: "",
-            productImage: "",
-            brand: "",
-            rating: "",
-            numReviews: "",
-            countInStock: "",
-        });
+      //   make form data empty
+      setFormData({
+        category: "",
+        name: "",
+        price: "",
+        description: "",
+        productImage: "",
+        brand: "",
+        rating: "",
+        numReviews: "",
+        countInStock: "",
+      });
     } catch (error) {
       console.error("Error adding product:", error);
       toast.error(error.response?.data?.msg || "An error occurred");

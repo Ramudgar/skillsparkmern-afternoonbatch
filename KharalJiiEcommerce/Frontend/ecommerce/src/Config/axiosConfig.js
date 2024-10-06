@@ -10,7 +10,6 @@ const axiosInstance = axios.create({
 axiosInstance.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem("token");
-    config.headers["Content-Type"] = "multipart/form-data";
     // console.log(token);
     if (token) {
     //   config.headers["Authorization"] = token; 

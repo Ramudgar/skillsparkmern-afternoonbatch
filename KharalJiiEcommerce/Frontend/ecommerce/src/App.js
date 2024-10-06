@@ -23,7 +23,10 @@ function App() {
           <Route path="/product" element={<ProdcutComponent />} />
           <Route path="/register" element={<RegistrationForm />} />
           <Route path="/login" element={<LoginComponent />} />
-          <Route path="/addproduct" element={<AddProductComponent />} />
+          <Route path="/addproduct" element={
+            <AddProductComponent />
+            
+            } />
           <Route path="/category" element={<CategoryComponent/>} />
           <Route path="/profile" element={<ProfileComponent />} />
           <Route path="*" element={<h1>404 Not Found</h1>} />
