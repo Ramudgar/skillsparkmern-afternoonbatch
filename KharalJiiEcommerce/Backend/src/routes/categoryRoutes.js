@@ -23,7 +23,7 @@ router.post(
 );
 
 // routes to get all categories
-router.get("/",authMiddleware, getCategories);
+router.get("/", authMiddleware, getCategories);
 
 // routes to update a category
 router.put("/:id", authMiddleware, authorizeRole("admin"), updateCategory);
@@ -31,7 +31,7 @@ router.put("/:id", authMiddleware, authorizeRole("admin"), updateCategory);
 // routes to delete a category
 router.delete(
   "/:id",
-  //  authMiddleware, authorizeRole("admin"),
+   authMiddleware, authorizeRole("admin"),
   deleteCategory
 );
 
