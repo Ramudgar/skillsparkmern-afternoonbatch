@@ -57,8 +57,11 @@ const CategoryComponent = () => {
     try {
       const response = await axiosInstance.delete(`/category/${id}`);
       console.log(response);
+      toast.success(response.data.message);
+      await fetchCategories();
     } catch (err) {
       console.log(err);
+      toast.error(err.response.data.message);
     }
   };
 
@@ -119,7 +122,7 @@ const CategoryComponent = () => {
                     Edit
                   </button>
                   <button
-                    onClick={handleDelete(category._id)}
+                    onClick={() => handleDelete(category._id)}
                     className="text-red-500 hover:text-red-700"
                   >
                     Delete
